@@ -1,0 +1,20 @@
+# need
+github actions
+unit test | integration test | ui test
+
+# using
+reactjs
+vite
+typescript
+eslint
+
+# best-practice efforts
+1. Using pure components
+2. Using typescript
+3. Don't use too many unnecessary states
+4. Minimize re-rendering
+5. Use HTML5 page structures
+.. useCallback for function instead of useEffect guessedLetters for keyboard handling (33:00)
+
+# bug
+keyboard still working eventhough win lose scenario has happened -> something to do with useCallback
