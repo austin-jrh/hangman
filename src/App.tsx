@@ -47,7 +47,7 @@ function App() {
     return () => {
       document.removeEventListener("keypress", handler);
     };
-  }, []);
+  }, [addGuessedLetter]);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
