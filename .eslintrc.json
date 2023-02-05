@@ -20,7 +20,7 @@
         },
         "ecmaVersion": "latest",
         "sourceType": "module",
-        "project": "hangman/tsconfig.json"
+        "project": "./tsconfig.json"
     },
     "plugins": [
         "react",

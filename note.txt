@@ -1,5 +1,6 @@
 # need
-github actions
+deploy to github pages
+build then test using github actions
 unit test | integration test | ui test
 
 # using
@@ -7,6 +8,9 @@ reactjs
 vite
 typescript
 eslint
+
+# library
+random-words
 
 # best-practice efforts
 1. Using pure components
@@ -17,4 +21,4 @@ eslint
 .. useCallback for function instead of useEffect guessedLetters for keyboard handling (33:00)
 
 # bug
-keyboard still working eventhough win lose scenario has happened -> something to do with useCallback
+keyboard still taking input even though win lose scenario has happened -> something to do with useCallback
