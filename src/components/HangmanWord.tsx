@@ -9,7 +9,9 @@ export function HangmanWord({
   wordToGuess,
   reveal = false,
 }: HangmanWordProps) {
-  const adjustedFontSize: string = String(90 / wordToGuess.length) + "vmin";
+  // min(6rem, )
+  const adjustedFontSize: string =
+    "min(6rem," + String(90 / wordToGuess.length) + "vw)";
   return (
     <div
       style={{
