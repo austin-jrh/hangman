@@ -76,6 +76,10 @@ function App() {
         gap: "2rem",
         margin: "0 auto",
         alignItems: "center",
+        background: "#B6EADA",
+        padding: "30px",
+        border: "10px solid #03001C",
+        borderRadius: "25px",
       }}
     >
       <div style={{ fontSize: "2rem", textAlign: "center" }}>

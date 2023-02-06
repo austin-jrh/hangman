@@ -8,12 +8,13 @@
   padding: .5rem;
   font-weight: bold;
   cursor: pointer;
-  color: black;
+  color: #03001C;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .btn.active {
-  background-color: hsl(200, 100%, 50%);
-  color: white;
+  background-color: #5B8FB9;
+  color: rgb(250, 250, 250);
 }
 
 .btn.inactive {
@@ -22,5 +23,5 @@
 
 .btn:hover:not(:disabled),
 .btn:focus:not(:disabled) {
-  background-color: hsl(200, 100%, 75%);
+  background-color: #74d6ce;
 }

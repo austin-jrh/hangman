@@ -1,6 +1,6 @@
 # need
 deploy to github pages
-build then test using github actions
+build -> test using github actions
 unit test | integration test | ui test
 
 # using
@@ -22,3 +22,12 @@ random-words
 
 # bug
 keyboard still taking input even though win lose scenario has happened -> something to do with useCallback
+font of hangman word needs to adjust depending on the available space
+
+# 3 tests
+1. Test win condition
+2. Test lose condition
+3. Test input
+4. Test number of mistakes corresponds to the number of man displayed
+5. Test that all 26 letters are displayed
+6. 

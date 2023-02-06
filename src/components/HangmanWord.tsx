@@ -9,15 +9,16 @@ export function HangmanWord({
   wordToGuess,
   reveal = false,
 }: HangmanWordProps) {
+  const adjustedFontSize: string = String(90 / wordToGuess.length) + "vmin";
   return (
     <div
       style={{
         display: "flex",
         gap: ".25em",
-        fontSize: "6rem",
+        fontSize: adjustedFontSize,
         fontWeight: "bold",
         textTransform: "uppercase",
-        fontFamily: "monospace",
+        fontFamily: "'Courier Prime', monospace",
       }}
     >
       {wordToGuess.split("").map((letter, index) => (

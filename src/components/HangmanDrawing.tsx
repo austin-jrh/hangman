@@ -7,7 +7,7 @@ const HEAD = (
       border: "10px solid black",
       position: "absolute",
       top: "50px",
-      right: "-30px",
+      right: "50px",
     }}
   />
 );
@@ -20,7 +20,7 @@ const BODY = (
       background: "black",
       position: "absolute",
       top: "120px",
-      right: 0,
+      right: "80px",
     }}
   />
 );
@@ -33,7 +33,7 @@ const RIGHT_ARM = (
       background: "black",
       position: "absolute",
       top: "150px",
-      right: "-100px",
+      right: "-20px",
       rotate: "-30deg",
       transformOrigin: "left bottom",
     }}
@@ -48,7 +48,7 @@ const LEFT_ARM = (
       background: "black",
       position: "absolute",
       top: "150px",
-      right: "10px",
+      right: "90px",
       rotate: "30deg",
       transformOrigin: "right bottom",
     }}
@@ -63,7 +63,7 @@ const RIGHT_LEG = (
       background: "black",
       position: "absolute",
       top: "210px",
-      right: "-90px",
+      right: "-10px",
       rotate: "60deg",
       transformOrigin: "left bottom",
     }}
@@ -78,7 +78,7 @@ const LEFT_LEG = (
       background: "black",
       position: "absolute",
       top: "210px",
-      right: 0,
+      right: "80px",
       rotate: "-60deg",
       transformOrigin: "right bottom",
     }}
@@ -92,6 +92,7 @@ type HangmanDrawingProps = {
 };
 
 export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
+  const lineColor: string = "#03001C";
   return (
     <div style={{ position: "relative" }}>
       {BODY_PARTS.slice(0, numberOfGuesses)}
@@ -99,29 +100,32 @@ export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
         style={{
           height: "50px",
           width: "10px",
-          background: "black",
+          backgroundColor: lineColor,
           position: "absolute",
           top: 0,
-          right: 0,
+          right: 80,
         }}
       />
+      {/* top horizontal */}
       <div
         style={{
           height: "10px",
-          width: "200px",
-          background: "black",
-          marginLeft: "120px",
+          width: "150px",
+          background: lineColor,
+          marginLeft: "10px",
         }}
       />
+      {/* vertical pole */}
       <div
         style={{
           height: "400px",
           width: "10px",
-          background: "black",
-          marginLeft: "120px",
+          background: lineColor,
+          marginLeft: "20px",
         }}
       />
-      <div style={{ height: "10px", width: "250px", background: "black" }} />
+      {/* bottom horizontal*/}
+      <div style={{ height: "10px", width: "250px", background: lineColor }} />
     </div>
   );
 }
