@@ -3,9 +3,10 @@ import randomWords from "random-words";
 import { HangmanDrawing } from "./components/HangmanDrawing";
 import { HangmanWord } from "./components/HangmanWord";
 import { Keyboard } from "./components/Keyboard";
+import { RestartGameButton } from "./components/RestartGameButton";
 
 function getWord() {
-  const words = randomWords({ min: 3, max: 10 }); // returns array of string
+  const words = randomWords({ min: 3, max: 10, exactly: 1 }); // returns array of string
   console.log(words);
   return words[0];
 }
@@ -49,6 +50,12 @@ function App() {
     };
   }, [guessedLetters]);
 
+  function restartGame() {
+    setGuessedLetters([]);
+    setWordToGuess(getWord());
+    console.log("restart game");
+  }
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       const key = e.key;
@@ -56,8 +63,7 @@ function App() {
       if (key !== "Enter") return;
 
       e.preventDefault();
-      setGuessedLetters([]);
-      setWordToGuess(getWord());
+      restartGame();
     };
 
     document.addEventListener("keypress", handler);
@@ -70,7 +76,7 @@ function App() {
   return (
     <div
       style={{
-        maxWidth: "800px",
+        maxWidth: "1200px",
         display: "flex",
         flexDirection: "column",
         gap: "2rem",
@@ -82,9 +88,27 @@ function App() {
         borderRadius: "25px",
       }}
     >
-      <div style={{ fontSize: "2rem", textAlign: "center" }}>
-        {isWinner && "win"}
-        {isLoser && "lose"}
+      <RestartGameButton onClick={restartGame} />
+      <div
+        style={{
+          fontSize: "min(2rem,7vw)",
+          textAlign: "center",
+          fontFamily: "Space Grotesk",
+        }}
+      >
+        {!(isWinner || isLoser) && "Guess the word!"}
+        {isWinner && "You guessed it!"}
+        {isLoser && "Better luck next time!"}
+      </div>
+      <div
+        style={{
+          fontSize: "min(1rem, 4vw)",
+          textAlign: "center",
+          fontFamily: "Space Grotesk",
+          visibility: isWinner || isLoser ? "visible" : "hidden",
+        }}
+      >
+        {"Click the restart button for a new word."}
       </div>
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
       <HangmanWord
