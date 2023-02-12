@@ -21,7 +21,7 @@ jobs:
         run: npm ci
 
   lint:
-    needs: build
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Lint
