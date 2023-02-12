@@ -1,8 +1,8 @@
 {
-  "name": "sutd-react2023",
+  "name": "hangman",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://austin-jrh.github.io/sutd-react2023",
+  "homepage": "https://austin-jrh.github.io/hangman",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -1,1 +1,1 @@
-# sutd-react2023
+# Hangman
