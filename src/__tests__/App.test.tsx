@@ -20,7 +20,7 @@ it("should click 'a' key, and then restart game", () => {
 
   const key_a = screen.getByTestId("key-a");
   fireEvent.click(key_a);
-  expect(key_a).not.toBeDisabled();
+  expect(key_a).toBeDisabled();
 
   fireEvent.click(screen.getByTestId("restart-game-button"));
   expect(key_a).not.toBeDisabled();
