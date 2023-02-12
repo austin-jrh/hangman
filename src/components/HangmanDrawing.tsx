@@ -104,7 +104,7 @@ type HangmanDrawingProps = {
 };
 
 export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
-  const lineColor: string = "#03001C";
+  const lineColor = "#03001C";
   return (
     <div style={{ position: "relative" }} data-testid={"hangman-drawing"}>
       {BODY_PARTS.slice(0, numberOfGuesses)}

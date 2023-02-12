@@ -37,8 +37,8 @@ describe("<Keyboard />", () => {
   ];
 
   it("should have all keyboard keys present", () => {
-    var activeLetters: string[] = [];
-    var inactiveLetters: string[] = [];
+    let activeLetters: string[] = [];
+    const inactiveLetters: string[] = [];
     render(
       <Keyboard
         disabled={false}
@@ -58,8 +58,8 @@ describe("<Keyboard />", () => {
   });
 
   it("should not be able to click disabled keyboard keys", () => {
-    var activeLetters: string[] = ["a", "b", "c"];
-    var inactiveLetters: string[] = ["d", "e", "f"];
+    let activeLetters: string[] = ["a", "b", "c"];
+    const inactiveLetters: string[] = ["d", "e", "f"];
 
     render(
       <Keyboard

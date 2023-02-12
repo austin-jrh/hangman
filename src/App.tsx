@@ -48,7 +48,7 @@ function App() {
     return () => {
       document.removeEventListener("keypress", handler);
     };
-  }, [guessedLetters]);
+  }, [addGuessedLetter]);
 
   function restartGame() {
     setGuessedLetters([]);
