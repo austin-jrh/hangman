@@ -6,7 +6,7 @@ permissions:
   contents: write
 
 jobs:
-  build-test-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,14 +19,34 @@ jobs:
 
       - name: Install
         run: npm ci
+
+  lint:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Lint
-        run: npm run lint:scripts
-      - name: Test
-        run: npm run test
+          run: npm run lint:scripts
+
+  build:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
       - name: Build
         run: npm run build
+  
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: npm run test
 
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
+
