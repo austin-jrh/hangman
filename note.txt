@@ -14,6 +14,7 @@ reactjs
 vite
 typescript
 eslint
+jest
 
 # library
 random-words
@@ -36,4 +37,7 @@ font of hangman word needs to adjust depending on the available space
 3. Test input
 4. Test number of mistakes corresponds to the number of man displayed
 5. Test that all 26 letters are displayed
-6. 
+6. Test drawing of Hangman
+7. Test the visibility of the letters in the guessed word
+
+Hangman icon from icons8.com https://icons8.com/icons/set/hangman

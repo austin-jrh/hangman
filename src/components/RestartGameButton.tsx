@@ -20,6 +20,7 @@ export function RestartGameButton({ onClick }: ButtonProps) {
           background: "rgba(214,214,214,0.3)",
         }}
         onClick={() => onClick()}
+        data-testid={"restart-game-button"}
       >
         <FontAwesomeIcon
           icon={faRotate}

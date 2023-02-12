@@ -9,6 +9,8 @@ const HEAD = (
       top: "50px",
       right: "50px",
     }}
+    data-testid="hman-head"
+    key={"head"}
   />
 );
 
@@ -22,6 +24,8 @@ const BODY = (
       top: "120px",
       right: "80px",
     }}
+    data-testid="hman-body"
+    key={"body"}
   />
 );
 
@@ -37,6 +41,8 @@ const RIGHT_ARM = (
       rotate: "-30deg",
       transformOrigin: "left bottom",
     }}
+    data-testid="hman-right-arm"
+    key={"right arm"}
   />
 );
 
@@ -52,6 +58,8 @@ const LEFT_ARM = (
       rotate: "30deg",
       transformOrigin: "right bottom",
     }}
+    data-testid="hman-left-arm"
+    key={"left arm"}
   />
 );
 
@@ -67,6 +75,8 @@ const RIGHT_LEG = (
       rotate: "60deg",
       transformOrigin: "left bottom",
     }}
+    data-testid="hman-right-leg"
+    key={"right leg"}
   />
 );
 
@@ -82,6 +92,8 @@ const LEFT_LEG = (
       rotate: "-60deg",
       transformOrigin: "right bottom",
     }}
+    data-testid="hman-left-leg"
+    key={"left leg"}
   />
 );
 
@@ -94,7 +106,7 @@ type HangmanDrawingProps = {
 export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
   const lineColor: string = "#03001C";
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative" }} data-testid={"hangman-drawing"}>
       {BODY_PARTS.slice(0, numberOfGuesses)}
       <div
         style={{
@@ -105,6 +117,7 @@ export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
           top: 0,
           right: 80,
         }}
+        data-testid="stand-hook"
       />
       {/* top horizontal */}
       <div
@@ -114,6 +127,7 @@ export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
           background: lineColor,
           marginLeft: "10px",
         }}
+        data-testid="stand-top-piece"
       />
       {/* vertical pole */}
       <div
@@ -123,9 +137,13 @@ export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
           background: lineColor,
           marginLeft: "20px",
         }}
+        data-testid="stand-pole"
       />
       {/* bottom horizontal*/}
-      <div style={{ height: "10px", width: "250px", background: lineColor }} />
+      <div
+        style={{ height: "10px", width: "250px", background: lineColor }}
+        data-testid="stand-base"
+      />
     </div>
   );
 }

@@ -49,6 +49,7 @@ export function Keyboard({
         gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr))",
         gap: ".5rem",
       }}
+      data-testid={"keyboard"}
     >
       {KEYS.map((key) => {
         const isActive = activeLetters.includes(key);
@@ -61,6 +62,7 @@ export function Keyboard({
             }`}
             disabled={isActive || isInactive || disabled}
             key={key}
+            data-testid={`key-${key}`}
           >
             {key}
           </button>

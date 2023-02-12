@@ -22,6 +22,7 @@ export function HangmanWord({
         textTransform: "uppercase",
         fontFamily: "'Courier Prime', monospace",
       }}
+      data-testid={"hangman-word"}
     >
       {wordToGuess.split("").map((letter, index) => (
         <span style={{ borderBottom: ".1em solid black" }} key={index}>
@@ -34,6 +35,7 @@ export function HangmanWord({
               color:
                 !guessedLetters.includes(letter) && reveal ? "red" : "black",
             }}
+            data-testid={`letter-index-${index}`}
           >
             {letter}
           </span>
