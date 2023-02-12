@@ -5,6 +5,7 @@ unit test | integration test | ui test
 
 # todo
 1. make the hangman drawing smaller
+2. create github actions pipeline
 
 # want
 1. changing opacity for the restart button
@@ -15,9 +16,13 @@ vite
 typescript
 eslint
 jest
+github pages
+github actions
 
 # library
 random-words
+fontawesome icons
+google fonts
 
 # best-practice efforts
 1. Using pure components
