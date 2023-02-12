@@ -18,6 +18,7 @@ export function RestartGameButton({ onClick }: ButtonProps) {
           borderRadius: "25px",
           alignItems: "center",
           background: "rgba(214,214,214,0.3)",
+          cursor: "pointer",
         }}
         onClick={() => onClick()}
         data-testid={"restart-game-button"}
