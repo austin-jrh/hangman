@@ -6,7 +6,7 @@ permissions:
   contents: write
 
 jobs:
-  setup:
+  pipeline:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,34 +17,18 @@ jobs:
         with:
           node-version: 18.x
 
-      - name: Install
+      - name: Install dependencies
         run: npm ci
 
-  lint:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
       - name: Lint
         run: npm run lint:scripts
 
-  build:
-    needs: lint
-    runs-on: ubuntu-latest
-    steps:
       - name: Build
         run: npm run build
 
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Test
         run: npm run test
 
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
