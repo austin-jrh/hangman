@@ -1,3 +1,5 @@
+import useWindowDimensions from "../hooks/getWindowDimentions";
+
 const HEAD = (
   <div
     style={{
@@ -104,9 +106,25 @@ type HangmanDrawingProps = {
 };
 
 export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
+  const { winHeight } = useWindowDimensions();
+
+  // const hangmanWidth = 250;
+  const hangmanHeight = 400;
+  const ratio = 0.25;
+  const newScale = (winHeight * ratio) / hangmanHeight;
+  const marginBottom = hangmanHeight - hangmanHeight * newScale;
+
   const lineColor = "#03001C";
   return (
-    <div style={{ position: "relative" }} data-testid={"hangman-drawing"}>
+    <div
+      style={{
+        position: "relative",
+        scale: `${newScale}`,
+        transformOrigin: "top center",
+        marginBottom: `-${marginBottom}px`,
+      }}
+      data-testid={"hangman-drawing"}
+    >
       {BODY_PARTS.slice(0, numberOfGuesses)}
       <div
         style={{
