@@ -52,6 +52,7 @@ describe("<Keyboard />", () => {
     // Expect all keys to be present, and to be clickable
     KEYS.forEach((key) => {
       const testKey = screen.getByTestId(`key-${key}`);
+      expect(testKey).toBeInTheDocument();
       fireEvent.click(testKey);
       expect(activeLetters.includes(key)).toBe(true);
     });
