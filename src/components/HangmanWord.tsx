@@ -9,7 +9,6 @@ export function HangmanWord({
   wordToGuess,
   reveal = false,
 }: HangmanWordProps) {
-  // min(6rem, )
   const adjustedFontSize: string =
     "min(6rem," + String(90 / wordToGuess.length) + "vw)";
   return (

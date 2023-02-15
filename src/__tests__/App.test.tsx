@@ -25,3 +25,22 @@ it("should click 'a' key, and then restart game", () => {
   fireEvent.click(screen.getByTestId("restart-game-button"));
   expect(key_a).not.toBeDisabled();
 });
+
+test("when click 'a' key, it should appear either in word or in drawing", () => {
+  render(<App />);
+
+  const key_a = screen.getByTestId("key-a");
+  fireEvent.click(key_a);
+
+  if (
+    screen.getAllByTestId(/letter-index-*/).some((letter) => {
+      return letter.textContent === "a";
+    })
+  ) {
+    console.log("appear in word");
+    expect(true).toBe(true); // appear in HangmanWord
+  } else {
+    console.log("appear in drawing");
+    expect(screen.getByTestId("hman-head")).toBeInTheDocument(); // appear in HangmanDrawing
+  }
+});
