@@ -13,6 +13,7 @@ To demonstrate things learned from SUTD Module: Fundamentals in Frontend Develop
     - [CI/CD](#cicd)
     - [Tests](#tests)
     - [Best-practice efforts](#best-practice-efforts)
+    - [Learnings](#learnings)
 
 ## How to Play
 
