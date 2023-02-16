@@ -3,7 +3,16 @@
 ## Objective
 To demonstrate things learned from SUTD Module: Fundamentals in Frontend Development by developing a reactive site with React and deployment pipeline.
 
+![](docs/1.png)
 # Find the website here: [Hangman](https://austin-jrh.github.io/hangman/)
+
+- [Hangman](#hangman)
+    - [Objective](#objective)
+    - [How to Play](#how-to-play)
+    - [Tech used](#tech-used)
+    - [CI/CD](#cicd)
+    - [Tests](#tests)
+    - [Best-practice efforts](#best-practice-efforts)
 
 ## How to Play
 
@@ -11,6 +20,7 @@ To demonstrate things learned from SUTD Module: Fundamentals in Frontend Develop
 ```
 A random word will be given, Player will have to guess the word by inputting letters.
 ```
+![](docs/2.png)
 
 ### Guess a Letter
 
@@ -18,30 +28,42 @@ A random word will be given, Player will have to guess the word by inputting let
 Player can `TAP` on any `LETTER` (for computers: or `KEY` the letter using `KEYBOARD`) 
 to attempt to guess if the Letter is included in the Word. 
 ```
+![](docs/3.png)
 
 ### Letter is not in Word
 
 ```
 If the Letter is not in the Word, a part of the Hangman will be drawn. An attempt is counted.
 ```
+![](docs/4.png)
 
 ### Letter is in Word
 
 ```
 If the Letter is in the Word, the Letter will appear.
 ```
+![](docs/5.png)
 
 ### How to Lose
 
 ```
 Player runs out of attempts when the whole Hangman is drawn!
 ```
+![](docs/6.png)
 
 ### How to Win
 
 ```
 Player fully guesses the Word!
 ```
+![](docs/7.png)
+
+### Get a new Word
+
+```
+Click the Restart Button to get a new Word.
+```
+![](docs/8.png)
 
 ## Tech used
 - ReactJS
@@ -55,7 +77,7 @@ Player fully guesses the Word!
 - FontAwesome icons (https://fontawesome.com/docs/web/setup/packages)
 - Google fonts (https://fonts.google.com/)
 
-Hangman icon from icons8.com https://icons8.com/icons/set/hangman
+Hangman icon from icons8.com (https://icons8.com/icons/set/hangman)
 
 ## CI/CD
 The project uses Github Actions to perform CI/CD operations:
