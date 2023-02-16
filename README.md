@@ -1,113 +1,150 @@
 # Hangman
 
-// to be stylized
-
-Objective
+## Objective
 To demonstrate things learned from SUTD Module: Fundamentals in Frontend Development by developing a reactive site with React and deployment pipeline.
 
-Find the website here
-Hangman (https://austin-jrh.github.io/hangman/)
+# Find the website here: [Hangman](https://austin-jrh.github.io/hangman/)
 
-Tech used
-ReactJS
-Vite
-Typescript
-ESLint
-Jest
-Github Actions
-Github Pages
-random-words (https://www.npmjs.com/package/random-words?activeTab=readme)
-FontAwesome icons (https://fontawesome.com/docs/web/setup/packages)
-Google fonts (https://fonts.google.com/)
+## How to Play
 
-CI/CD
-The project uses Github Actions to perform CI/CD operations
+### Description
+```
+A random word will be given, Player will have to guess the word by inputting letters.
+```
+
+### Guess a Letter
+
+``` 
+Player can `TAP` on any `LETTER` (for computers: or `KEY` the letter using `KEYBOARD`) 
+to attempt to guess if the Letter is included in the Word. 
+```
+
+### Letter is not in Word
+
+```
+If the Letter is not in the Word, a part of the Hangman will be drawn. An attempt is counted.
+```
+
+### Letter is in Word
+
+```
+If the Letter is in the Word, the Letter will appear.
+```
+
+### How to Lose
+
+```
+Player runs out of attempts when the whole Hangman is drawn!
+```
+
+### How to Win
+
+```
+Player fully guesses the Word!
+```
+
+## Tech used
+- ReactJS
+- Vite
+- Typescript
+- ESLint
+- Jest
+- Github Actions
+- Github Pages
+- random-words (https://www.npmjs.com/package/random-words?activeTab=readme)
+- FontAwesome icons (https://fontawesome.com/docs/web/setup/packages)
+- Google fonts (https://fonts.google.com/)
+
+## CI/CD
+The project uses Github Actions to perform CI/CD operations:
 
 1. Checkout Repository
-2. Install NodeJS
-3. Install Dependencies
-4. Build Project
-5. Run ESLint
-6. Run Jest Tests (UI, Unit, Integration tests)
-7. Send to deploy using github-pages
+1. Install NodeJS
+1. Install Dependencies
+1. Build Project
+1. Run ESLint
+1. Run Jest Tests (UI, Unit, Integration tests)
+1. Send to deploy using github-pages
 
-Tests
-<App /> tests
+## Tests
+### `<App />` tests
 
-1. Check whether all components are present (Hangman Drawing, Hangman Word, Keyboard, Reset Game Button)
-2. Check that restart game works
-3. Check that pressing a key will either appear in the word or draw the head of a hangman
+- Check whether all components are present (`Hangman Drawing`, `Hangman Word`, `Keyboard`, `Reset Game Button`)
+- Check that restart game works
+- Check that pressing a key will either appear in the word or draw the head of a hangman
 
-<HangmanDrawing /> tests
+### `<HangmanDrawing />` tests
 
-1. Hangman stand is visible
-2. Hangman body part is visible depending on the number of guesses
+- Hangman stand is visible
+- Hangman body part is visible depending on the number of guesses
 
-<HangmanWord /> tests
+### `<HangmanWord />` tests
 
-1. Revealed letters is visible
-2. Displayed letters matches the word to guess
+- Revealed letters is visible
+- Displayed letters matches the word to guess
 
-<Keyboard /> tests
+### `<Keyboard />` tests
 
-1. All 26 keys are present and interactable
-2. Unable to click disabled keys
+- All 26 keys are present and interactable
+- Unable to click disabled keys
 
-Best-practice efforts
+## Best-practice efforts
 
 1. Using TypeScript
 
-- easier to read code and avoid errors, show errors during compile time
+    - Easier to read code and avoid errors, removes uncertainty
 
-2. Use of React Hooks
+1. Use of linter and code formatter
 
-- using useEffect and useCallback
+    - More readable code and detect mistakes early
 
-```
-const addGuessedLetter = useCallback(
-  (letter: string) => {
-    if (guessedLetters.includes(letter) || isLoser || isWinner) return;
+1. Adding tests
 
-    setGuessedLetters((currentLetters) => [...currentLetters, letter]);
-  },
-  [guessedLetters, isWinner, isLoser]
-);
+    - Detect bugs and inconsistencies
 
-useEffect(() => {
-  const handler = (e: KeyboardEvent) => {
-    const key = e.key;
+1. Use of React Hooks
 
-    if (!key.match(/^[a-z]$/)) return;
+    - Using `useEffect` and `useCallback`
 
-    e.preventDefault();
-    addGuessedLetter(key);
-  };
+    ```js
+    const addGuessedLetter = useCallback(
+      (letter: string) => {
+        if (guessedLetters.includes(letter) || isLoser || isWinner) return;
 
-  document.addEventListener("keypress", handler);
+        setGuessedLetters((currentLetters) => [...currentLetters, letter]);
+      },
+      [guessedLetters, isWinner, isLoser]
+    );
 
-  return () => {
-    document.removeEventListener("keypress", handler);
-  };
-}, [addGuessedLetter]);
-```
+    useEffect(() => {
+      const handler = (e: KeyboardEvent) => {
+        const key = e.key;
 
-3. Don't use too many unnecessary states
+        if (!key.match(/^[a-z]$/)) return;
 
-```
-  const incorrectLetters = guessedLetters.filter(
-  (letter) => !wordToGuess.includes(letter)
-);
+        e.preventDefault();
+        addGuessedLetter(key);
+      };
 
-const isLoser = incorrectLetters.length >= 6; // 6 body parts
-const isWinner = wordToGuess
-  .split("")
-  .every((letter) => guessedLetters.includes(letter));
-```
+      document.addEventListener("keypress", handler);
 
-4. Use of linter and code formatter
+      return () => {
+        document.removeEventListener("keypress", handler);
+      };
+    }, [addGuessedLetter]);
+    ```
 
-- more readable code and detect mistakes early
+1. Don't use too many unnecessary states
 
-5. Adding tests
+    ```js
+      const incorrectLetters = guessedLetters.filter(
+      (letter) => !wordToGuess.includes(letter)
+    );
 
-- detect bugs and inconsistencies
+    const isLoser = incorrectLetters.length >= 6; // 6 body parts
+    const isWinner = wordToGuess
+      .split("")
+      .every((letter) => guessedLetters.includes(letter));
+    ```
+
+
