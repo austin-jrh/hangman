@@ -170,5 +170,10 @@ The project uses Github Actions to perform CI/CD operations:
       .split("")
       .every((letter) => guessedLetters.includes(letter));
     ```
+    
+## Learnings
 
-
+1. Overall how to use `ReactJS` (`React Hooks`, `TypeScript`).
+1. How to use `Jest` for testing.
+1. How to deploy using `Github Pages`.
+1. How to make simple CI/CD pipeline using `Github Actions`.
