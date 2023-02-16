@@ -137,7 +137,7 @@ The project uses Github Actions to perform CI/CD operations:
 1. Don't use too many unnecessary states
 
     ```js
-      const incorrectLetters = guessedLetters.filter(
+    const incorrectLetters = guessedLetters.filter(
       (letter) => !wordToGuess.includes(letter)
     );
 
