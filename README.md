@@ -55,6 +55,8 @@ Player fully guesses the Word!
 - FontAwesome icons (https://fontawesome.com/docs/web/setup/packages)
 - Google fonts (https://fonts.google.com/)
 
+Hangman icon from icons8.com https://icons8.com/icons/set/hangman
+
 ## CI/CD
 The project uses Github Actions to perform CI/CD operations:
 
