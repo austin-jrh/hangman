@@ -96,9 +96,11 @@ function App() {
           fontFamily: "Space Grotesk",
         }}
       >
-        {!(isWinner || isLoser) && "Guess the word!"}
-        {isWinner && "You guessed it!"}
-        {isLoser && "Better luck next time!"}
+        <b>
+          {!(isWinner || isLoser) && "Guess the word!"}
+          {isWinner && "You guessed it!"}
+          {isLoser && "Better luck next time!"}
+        </b>
       </div>
       <div
         style={{
